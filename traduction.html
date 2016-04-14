@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>CSL Minimaliste</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Une feuille de style CSL réduite à sa plus simple expression et les réflexions qui en surgissent." />
+        <meta name="robots" content="index, follow" />
+        <!--        <link rel="stylesheet" type="text/css" href="traduction.css" media="screen" />-->
+        <style media="screen" type="text/css">
+            body {
+                margin:0;
+                padding:0;
+                border:0;			/* This removes the border around the viewport in old versions of IE */
+                width:100%;
+                background:#fff;
+                min-width:600px;		/* Minimum width of layout - remove line if not required */
+                /* The min-width property does not work in old versions of Internet Explorer */
+                font-size:90%;
+            }
+            a {
+                color:#369;
+            }
+            a:hover {
+                color:#fff;
+                background:#369;
+                text-decoration:none;
+            }
+            h1, h2, h3 {
+                margin:.8em 0 .2em 0;
+                padding:0;
+            }
+            p {
+                margin:.4em 0 .8em 0;
+                padding:0;
+            }
+            img {
+                margin:10px 0 5px;
+            }
+            #ads img {
+                display:block;
+                padding-top:10px;
+            }
+            #glossaire {
+                list-style-type:none;
+                padding:0;
+                margin:0;
+            }
+            #glossaire li {
+                margin-bottom:3px;
+            }
+
+            /* Header styles */
+            #header {
+                clear:both;
+                float:left;
+                width:100%;
+            }
+            #header {
+                border-bottom:1px solid #000;
+            }
+            #header p,
+            #header h1,
+            #header h2 {
+                padding:.4em 15px 0 15px;
+                margin:0;
+            }
+            #header ul {
+                clear:left;
+                float:left;
+                width:100%;
+                list-style:none;
+                margin:10px 0 0 0;
+                padding:0;
+            }
+            #header ul li {
+                display:inline;
+                list-style:none;
+                margin:0;
+                padding:0;
+            }
+            #header ul li a {
+                display:block;
+                float:left;
+                margin:0 0 0 1px;
+                padding:3px 10px;
+                text-align:center;
+                background:#eee;
+                color:#000;
+                text-decoration:none;
+                position:relative;
+                left:15px;
+                line-height:1.3em;
+            }
+            #header ul li a:hover {
+                background:#369;
+                color:#fff;
+            }
+            #header ul li a.active,
+            #header ul li a.active:hover {
+                color:#fff;
+                background:#000;
+                font-weight:bold;
+            }
+            #header ul li a span {
+                display:block;
+            }
+            /* 'widths' sub menu */
+            #layoutdims {
+                clear:both;
+                background:#FAFAFA;
+                border-top:1px solid #000;
+                margin:0;
+                padding:6px 15px !important;
+                text-align:left;
+            }
+            /* column container */
+            .colmask {
+                position:relative;	/* This fixes the IE7 overflow hidden bug */
+                clear:both;
+                float:left;
+                width:100%;			/* width of whole page */
+                overflow:hidden;		/* This chops off any overhanging divs */
+            }
+            /* common column settings */
+            .colright,
+            .colmid,
+            .colleft {
+                float:left;
+                width:100%;			/* width of page */
+                position:relative;
+            }
+            .col1,
+            .col2,
+            .col3 {
+                float:left;
+                position:relative;
+                padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+                only padding top and bottom is included here, make it whatever value you need */
+                overflow:hidden;
+            }
+            /* 3 Column blog style settings */
+            .blogstyle {
+                background:#fff;			/* right column background colour */
+            }
+            .blogstyle .colmid {
+                right:20%;				/* width of the right column */
+                background:#fafafa;		/* center column background colour */
+            }
+            .blogstyle .colleft {
+                right:40%;				/* width of the middle column */
+                background:#fff;			/* left column background colour */
+            }
+            .blogstyle .col1 {
+                width:36%;				/* width of center column content (column width minus padding on either side) */
+                left:102%;				/* 100% plus left padding of center column */
+            }
+            .blogstyle .col2 {
+                width:36%;				/* Width of left column content (column width minus padding on either side) */
+                left:26%;				/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+            }
+            .blogstyle .col3 {
+                width:16%;				/* Width of right column content (column width minus padding on either side) */
+                left:70%;				/* Please make note of the brackets here:
+                (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+            }
+            /* Footer styles */
+            #footer {
+                clear:both;
+                float:left;
+                width:100%;
+                border-top:1px solid #000;
+            }
+            #footer p {
+                padding:10px;
+                margin:0;
+                text-align:center;
+            }
+            /* Syntax highlighting */
+            .xml .de1, .xml .de2 {
+                font:normal normal 1em/1.2em monospace;
+                margin:0;
+                padding:0;
+                background:none;
+                vertical-align:top;
+                white-space: nowrapcolor: #000020;
+            }
+            .xml  {
+                font-family:monospace;
+                color: #006;
+                /*
+                border: 1px solid #d0d0d0;
+                background-color: #f0f0f0;
+                */
+            }
+            .xml a:link {
+                color: #000060;
+            }
+            .xml a:hover {
+                background-color: #f0f000;
+            }
+            .xml .imp {
+                font-weight: bold;
+                color: red;
+            }
+            .xml li, .xml .li1 {
+                font-weight: normal;
+                vertical-align:top;
+                font: normal normal 100% 'Courier New', Courier, monospace;
+                color: #003030;
+            }
+            .xml .ln {
+                width:1px;
+                text-align:right;
+                margin:0;
+                padding:0 2px;
+                vertical-align:top;
+            }
+            .xml .es0 {
+                color: #000099;
+                font-weight: bold;
+            }
+            .xml .br0 {
+                color: #66cc66;
+            }
+            .xml .sy0 {
+                color: #66cc66;
+            }
+            .xml .st0 {
+                color: #ff0000;
+            }
+            .xml .nu0 {
+                color: #cc66cc;
+            }
+            .xml .sc-1 {
+                color: #808080;
+                font-style: italic;
+            }
+            .xml .sc0 {
+                color: #00bbdd;
+            }
+            .xml .sc1 {
+                color: #ddbb00;
+            }
+            .xml .sc2 {
+                color: #339933;
+            }
+            .xml .sc3 {
+                color: #009900;
+            }
+            .xml .re0 {
+                color: #000066;
+            }
+            .xml .re1 {
+                color: #000000;
+                font-weight: bold;
+            }
+            .xml .re2 {
+                color: #000000;
+                font-weight: bold;
+            }
+            .xml span.xtra {
+                display:block;
+            }
+
+            /* LaTeX logo */
+            .tex sub, .latex sub, .latex sup {
+                text-transform: uppercase;
+            }
+
+            .tex sub, .latex sub {
+                vertical-align: -0.5ex;
+                margin-left: -0.1667em;
+                margin-right: -0.125em;
+            }
+
+            .tex, .latex, .tex sub, .latex sub {
+                font-size: 1em;
+            }
+
+            .latex sup {
+                font-size: 0.85em;
+                vertical-align: 0.15em;
+                margin-left: -0.36em;
+                margin-right: -0.15em;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="header">
+            <h1>CSL Minimaliste</h1>
+            <p id="layoutdims"><a href="index.html">Documentation</a> | <strong>Traduction</strong> | <a href="commentaire.html">Réflexion</a><span style="float:right"><em>Simplex sigillum veri</em></span></p>
+        </div>
+        <div class="colmask blogstyle">
+            <div class="colmid">
+                <div class="colleft">
+                    <div class="col1">
+                        <!-- Column 1 start -->
+                        <h3>Préambule</h3>
+                        <p>Ce texte est rédigé en CSL, un langage à balises de type XML <strong>[1]</strong>.</p>
+                        <p>Le texte est encodé en UTF-8, ce qui permet notamment d'utiliser les caractères spéciaux de certains claviers sans mauvaise surprise. Le CSL est précieusement conservé à l'adresse purl.org en compagnie de dizaines d'autres dialectes. C'est un langage encore jeune, rédigé ici conformément à sa version 1.0. Enfin, le texte présenté respecte les particularités de la langue française, si toutefois les instructions qu'il comporte devaient s'appliquer à des travaux rédigés en français.</p>
+                        <h3>Informations</h3>
+                        <p>Le texte décrit un style baptisé CSL Minimaliste. Le dépositaire de ce style réside dans les tuyaux du World Wide Web à une adresse qui permet d'identifier le style de façon unique. Le style a été modifié pour la dernière fois à la date et heure indiquées (avec une précision d'horloge atomique).</p>
+                        <h3>Macros</h3>
+                        <p>Le CSL tend à la répétition. Ainsi, l'utilisation de raccourcis appelés macros est fortement recommandé au lecteur soucieux de ne pas ruiner sa vue, sa concentration et sa productivité.</p>
+                        <p>Une première macro a été baptisée <em>author</em>. Elle s'applique à l'information bibliographique <em>auteur</em>, qui appartient au groupe des <em>noms</em>. La macro spécifie que ce nom doit toujours être rédigé en présentant d'abord le nom de famille puis le prénom, en séparant les deux par une virgule et un espace. Qui plus est, le prénom sera abrégé par son initiale.</p>
+                        <p>Une seconde macro a été baptisée <em>year</em>. Elle s'applique à l'information bibliographique <em>date de publication</em>, qui appartient cette fois au groupe des <em>dates</em>. La macro spécifie que seul un sous-élément de cette date doit affiché, en l'occurrence l'année.</p>
+                        <h3>Citations</h3>
+                        <p>Plusieurs citations apparaissant successivement seront triées d'abord par nom d'auteur puis par date de publication.</p>
+                        <p>Une citation a la forme suivante : les références sont précédées d'un crochet ouvrant et suivie d'un crochet fermant ; s'il y a plusieurs références, elles sont séparées par un point-virgule précédé et suivi d'un espace ; une référence est constituée du nom de famille de l'auteur <strong>[2]</strong> et d'une date, séparés par une virgule.</p>
+                        <h3>Bibliographie</h3>
+                        <p>La bibliographie est triée dans l'ordre des auteurs, puis des dates de publication, puis des titres.
+                        <p>Chaque entrée bibliographique se termine par un point. Les sous-éléments sont séparés par un point suivi d'un espace. Ces sous-éléments sont : le nom de l'auteur affiché tel que prévu par la macro <em>author</em> ; le titre de la référence, en italique ; la date affichée telle que prévu par la macro <em>year</em>.</p>
+                        <!-- Column 1 end -->
+                    </div>
+                    <div class="col2">
+                        <!-- Column 2 start -->
+                        <div class="xml"><ol><li class="li1"><div class="de1"><span class="sc3"><span class="re1">&lt;?xml</span> <span class="re0">version</span>=<span class="st0">&quot;1.0&quot;</span> <span class="re0">encoding</span>=<span class="st0">&quot;utf-8&quot;</span><span class="re2">?&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1"><span class="sc3"><span class="re1">&lt;style</span> <span class="re0">xmlns</span>=<span class="st0">&quot;http://purl.org/net/xbiblio/csl&quot;</span> <span class="re0">version</span>=<span class="st0">&quot;1.0&quot;</span> <span class="re0">class</span>=<span class="st0">&quot;in-text&quot;</span> <span class="re0">default-locale</span>=<span class="st0">&quot;fr-FR&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc-1">&lt;!-- Informations obligatoires --&gt;</span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;info<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;title<span class="re2">&gt;</span></span></span>CSL Minimaliste<span class="sc3"><span class="re1">&lt;/title<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;id<span class="re2">&gt;</span></span></span>http://arthurperret.com/minicsl/<span class="sc3"><span class="re1">&lt;/id<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;updated<span class="re2">&gt;</span></span></span>2016-04-05T08:00:00+00:00<span class="sc3"><span class="re1">&lt;/updated<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/info<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc-1">&lt;!-- Macros --&gt;</span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;macro</span> <span class="re0">name</span>=<span class="st0">&quot;author&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;names</span> <span class="re0">variable</span>=<span class="st0">&quot;author&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;name</span> <span class="re0">name-as-sort-order</span>=<span class="st0">&quot;first&quot;</span> <span class="re0">sort-separator</span>=<span class="st0">&quot;, &quot;</span> <span class="re0">initialize-with</span>=<span class="st0">&quot;.&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/names<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/macro<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;macro</span> <span class="re0">name</span>=<span class="st0">&quot;year&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;date</span> <span class="re0">variable</span>=<span class="st0">&quot;issued&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;date-part</span> <span class="re0">name</span>=<span class="st0">&quot;year&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/date<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/macro<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc-1">&lt;!-- Format des citations dans le texte --&gt;</span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;citation<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;sort<span class="re2">&gt;</span></span></span> &nbsp;</div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;key</span> <span class="re0">macro</span>=<span class="st0">&quot;author&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;key</span> <span class="re0">macro</span>=<span class="st0">&quot;year&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/sort<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;layout</span> <span class="re0">prefix</span>=<span class="st0">&quot;[&quot;</span> <span class="re0">suffix</span>=<span class="st0">&quot;]&quot;</span> <span class="re0">delimiter</span>=<span class="st0">&quot; ; &quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;group</span> <span class="re0">delimiter</span>=<span class="st0">&quot;, &quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;text</span> <span class="re0">variable</span>=<span class="st0">&quot;author&quot;</span> <span class="re0">form</span>=<span class="st0">&quot;short&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;text</span> <span class="re0">macro</span>=<span class="st0">&quot;year&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/group<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/layout<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/citation<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc-1">&lt;!-- Format de la bibliographie --&gt;</span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;bibliography<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;sort<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;key</span> <span class="re0">macro</span>=<span class="st0">&quot;author&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;key</span> <span class="re0">macro</span>=<span class="st0">&quot;year&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;key</span> <span class="re0">variable</span>=<span class="st0">&quot;title&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/sort<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;layout</span> <span class="re0">suffix</span>=<span class="st0">&quot;.&quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;group</span> <span class="re0">delimiter</span>=<span class="st0">&quot;. &quot;</span><span class="re2">&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;text</span> <span class="re0">macro</span>=<span class="st0">&quot;author&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;text</span> <span class="re0">variable</span>=<span class="st0">&quot;title&quot;</span> <span class="re0">font-style</span>=<span class="st0">&quot;italic&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;text</span> <span class="re0">macro</span>=<span class="st0">&quot;year&quot;</span><span class="re2">/&gt;</span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/group<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/layout<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1">&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;/bibliography<span class="re2">&gt;</span></span></span></div></li>
+                            <li class="li1"><div class="de1"><span class="sc3"><span class="re1">&lt;/style<span class="re2">&gt;</span></span></span></div></li>
+                            </ol></div>
+                        <!-- Column 2 end -->
+                    </div>
+                    <div class="col3">
+                        <!-- Column 3 start -->
+                        <h3>Notes</h3>
+                        <p>Cette page présente une tentative de traduction littérale (et littéraire) du code CSL ligne par ligne. L'intérêt de l'exercice réside autant dans le jeu sur les notions de langage et de traduction que dans son potentiel pédagogique vis-à-vis des curieux non formés à l'informatique. Il livre également quelques pistes intéressantes, examinées dans la partie <a href="commentaire.html">Réflexion</a>.</p>
+                        <hr></hr>
+                    <p id="NdT2"><strong>[1]</strong> <em>On dira du CSL qu'il découle du XML comme on dira de l'italien qu'il s'agit d'une langue latine. Si la langue italienne permet de rédiger indifféremment des romans d'aventure, des essais de philosophie ou des recettes de cuisine, le CSL est un langage à l'usage bien plus spécifique : il se contente de transcrire des instructions de typographie et de mise en page à l'attention de certaines applications informatiques.</em></p>
+                    <p id="NdT1"><strong>[2]</strong> <em>Le code semble ici prendre des libertés avec les règles du CSL. En effet, l'utilisation de la variable auteur directement dans une instruction de type text est une utilisation incorrecte selon la <a href="http://docs.citationstyles.org/en/stable/specification.html">spécification</a>. Cependant, l'instruction fonctionne et ce avec une formulation plus simple. Le souci d'efficacité dans la démonstration a sans doute primé sur le respect de la syntaxe.</em></p>
+                    <!-- Column 3 end -->
+                </div>
+            </div>
+        </div>
+        </div>
+    <div id="footer">
+        <p>Travail réalisé dans le cadre du master SIBIST de l'<a href="http://www.enssib.fr/">Enssib</a> - <a href="https://arthurperret.com/">Arthur Perret</a> (avril 2016)</p>
+    </div>
+
+    </body>
+</html>
