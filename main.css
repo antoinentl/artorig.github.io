@@ -1,0 +1,105 @@
+@import 'https://fonts.googleapis.com/css?family=Libre+Baskerville' 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+header {
+    background-color: #263d36;
+    background-image: url("banner.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.2;
+    max-width: none;
+    padding: 10vw 2em;
+    text-align: center;
+}
+
+header img {
+    display: inline-block;
+    height: 120px;
+    vertical-align: top;
+    width: 120px;
+}
+
+header h1 {
+    color: black;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+header a,
+footer a {
+  border: 1px solid #2B2D9F;
+  border-radius: 290486px;
+  color: black;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+
+header a:hover,
+footer a:hover {
+  background:  #2B2D9F;
+  color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 50em;
+    padding: 4em 1em;
+}
+
+h1,
+h2 {
+    font-family: "Open Sans";
+}
+
+p {
+    font-family: "Libre Baskerville" "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+#block {
+  background: #f5f7f9;
+  border-bottom: 1px solid #d8dee9;
+  border-left: 2px solid #69c;
+  color: #566b78;
+}
+
+#block {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+#block {
+  padding: 1em;
+}
+
+a {
+  color: #2B2D9F;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  text-align: center;
+}
