@@ -1,5 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Libre+Baskerville';
-@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 header {
     background-color: #263d36;
@@ -50,21 +49,13 @@ body {
     margin: 0;
     padding: 0;
     color: #566b78
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 main {
     margin: 0 auto;
     max-width: 50em;
     padding: 4em 1em;
-}
-
-h1,
-h2 {
-    font-family: "Open Sans";
-}
-
-p {
-    font-family: "Libre Baskerville" "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 h2 {
