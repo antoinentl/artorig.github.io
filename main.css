@@ -8,7 +8,7 @@ header {
     background-size: cover;
     line-height: 1.2;
     max-width: none;
-    padding: 10vw 2em;
+    padding: 5vw 2em;
     text-align: center;
 }
 
@@ -42,7 +42,7 @@ footer a {
 
 header a:hover,
 footer a:hover {
-  background:  #2B2D9F;
+  background: #2B2D9F;
   color: white;
 }
 
