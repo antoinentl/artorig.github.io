@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
 
 header {
     background-color: #263d36;
@@ -23,6 +23,7 @@ header h1 {
     color: black;
     font-size: 2.5em;
     font-weight: 300;
+    font-family: "Open Sans Light" "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
 header a,
@@ -49,7 +50,7 @@ body {
     margin: 0;
     padding: 0;
     color: #566b78
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
 main {
